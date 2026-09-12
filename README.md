@@ -1,67 +1,134 @@
 # MeteoCasarano Lab
 
-Repository pubblico di distribuzione di **MeteoCasarano Lab** per Windows.
+Experimental multi-model weather analysis application for **Casarano and the Basso Salento area in Southern Italy**.
 
-MeteoCasarano Lab è un'applicazione desktop dedicata all'analisi di temporali,
-fenomeni intensi e instabilità atmosferica nel Basso Salento.
+This public repository contains the official Windows releases of the project and serves as a technical overview of the application. The source repository is currently private.
+
+> **Project status:** experimental / non-operational meteorological analysis tool. The diagnostic indices produced by the application are not official forecasts, warnings or Civil Protection alerts.
+
+## What the application does
+
+MeteoCasarano Lab combines forecast-model data, local persistence and observed upper-air data to support structured analysis of potentially significant weather conditions.
+
+Main capabilities include:
+
+- geographic grid focused on Casarano and the surrounding area;
+- comparison of **ECMWF IFS, NOAA GFS, DWD ICON and ItaliaMeteo ICON-2I**;
+- experimental 0–100 diagnostic indices for thunderstorms, severe convection, cloudbursts, hail, gusts/downbursts, convective organization and snow potential;
+- reliability indicators, diagnostic reasons and factor contributions;
+- observed sounding support for **Lecce-Galatina WMO 16332**, with University of Wyoming as primary source and NOAA/NCEI IGRA as fallback;
+- model-versus-observation comparison;
+- local SQLite archive for analyses, radiosoundings and Open-Meteo cache;
+- real/composite and historical model-run handling;
+- interactive map and time navigation;
+- Windows auto-updater;
+- Windows x64 builds and a signed Android ARM64 APK in the private development workflow.
+
+## Engineering focus
+
+The project is intentionally more than a UI prototype. It was built around a few concrete engineering problems:
+
+### Multi-source data normalization
+
+External weather data is validated and normalized before entering the application domain. Different forecast models and sounding sources are handled through a common internal representation.
+
+### Missing-data handling
+
+Missing meteorological parameters are treated explicitly rather than silently coerced to zero. Diagnostic reliability is reduced when required information is incomplete.
+
+### Model comparison rather than single-model dependence
+
+The application keeps the contributing forecast models visible and separate, then produces a weighted multi-model synthesis. The observed sounding is used for comparison and diagnostics; it does **not** automatically rewrite model weights.
+
+### Local persistence and reproducibility
+
+SQLite is used for analysis history, radiosoundings and API cache. The release process is tied to an exact Git commit and clean builds are reproduced from that commit rather than from an arbitrary working tree.
+
+### Cross-platform packaging
+
+The application combines a TypeScript frontend with a Rust/Tauri backend and has been packaged for Windows and Android during development.
+
+## Architecture
+
+```mermaid
+flowchart TD
+    UI[TypeScript UI] --> CORE[Diagnostic / domain core]
+    CORE --> MODELS[Forecast models\nECMWF / GFS / ICON / ICON-2I]
+    CORE --> SOUNDING[Observed sounding\nLecce-Galatina 16332]
+    CORE --> DB[SQLite\nhistory / cache]
+    MODELS --> API[Open-Meteo]
+    SOUNDING --> WY[University of Wyoming]
+    SOUNDING --> IGRA[NOAA / NCEI IGRA fallback]
+    UI --> TAURI[Tauri 2 / Rust]
+    TAURI --> DB
+```
+
+### Main technologies
+
+- **TypeScript**
+- **Rust**
+- **Tauri 2**
+- **SQLite**
+- Open-Meteo APIs
+- OpenStreetMap tiles
+
+## Verified release state — v0.3.3
+
+The v0.3.3 release cycle recorded the following checks in the private development repository:
+
+- **19 TypeScript/core tests passed**;
+- **5 Rust unit tests passed**;
+- SQLite migration integration test passed;
+- clean rebuild from the exact release commit;
+- Windows x64 NSIS and MSI packages produced;
+- Tauri updater signatures produced and verified;
+- public GitHub release published;
+- updater endpoint verified;
+- Android ARM64 APK built, signed and verified in the development workflow.
+
+The release build was tied to commit:
+
+`7634a94823e7e92cc51b71bfa967f2f64b3dfa0a`
 
 ## Download
 
-Le versioni ufficiali vengono pubblicate esclusivamente nella sezione
-**Releases** di questo repository.
+Official public Windows builds are published only in this repository's **Releases** section:
 
-Sono previsti:
+[View releases](https://github.com/marcomastroleo/MeteoCasarano-Lab-Releases/releases)
 
-- installer Windows NSIS (`.exe`);
-- installer Windows MSI (`.msi`);
-- file `SHA256SUMS.txt` per verificare l'integrità dei download.
+Published release assets can include:
 
-## Verifica SHA-256
+- Windows NSIS installer (`.exe`);
+- Windows MSI installer (`.msi`);
+- `SHA256SUMS.txt` for integrity verification;
+- updater metadata where applicable.
 
-Dopo avere scaricato un installer, in PowerShell è possibile calcolarne
-l'impronta con:
+## Verify a Windows download
+
+After downloading an installer, calculate its SHA-256 hash in PowerShell:
 
 ```powershell
-Get-FileHash "MeteoCasarano Lab_0.1.0_x64-setup.exe" -Algorithm SHA256
+Get-FileHash "MeteoCasarano Lab_0.3.3_x64-setup.exe" -Algorithm SHA256
 ```
 
-Il valore deve coincidere esattamente con quello pubblicato insieme alla
-release.
+The result must match the checksum published with the corresponding release.
 
-## Firma digitale Windows
+## Windows code-signing note
 
-Gli installer di MeteoCasarano Lab sono attualmente distribuiti senza un
-certificato commerciale di Code Signing.
+The Windows installers currently do not use a commercial Authenticode certificate. Windows SmartScreen may therefore display **Unknown publisher**, especially for a new or low-distribution build.
 
-Windows SmartScreen può quindi mostrare un avviso con indicazione
-**Autore sconosciuto**, soprattutto per versioni nuove o poco diffuse.
+The Tauri updater uses its own release-signing mechanism. For public installer verification, download only from this repository and compare the published SHA-256 checksum.
 
-Questo avviso, da solo, non significa che il programma sia stato identificato
-come malware.
+## Why the source repository is private
 
-Per ridurre il rischio di scaricare copie alterate:
+This repository is intentionally the public distribution and project-overview repository. Publishing the installers here does not imply publication of the source code or grant rights beyond those explicitly stated elsewhere.
 
-1. scaricare MeteoCasarano Lab esclusivamente da questo repository;
-2. verificare sempre il valore SHA-256 pubblicato nella release.
+The public overview focuses on the engineering decisions, release discipline and observable project outputs without presenting the experimental meteorological diagnostics as scientifically validated forecasting products.
 
-## Componenti di terze parti
+## Third-party components
 
-Gli installer includono gli avvisi e i materiali relativi alle dipendenze
-software di terze parti utilizzate dalla build distribuita, compresi i
-materiali richiesti per i componenti soggetti a Mozilla Public License 2.0.
+Distributed installers include the notices and materials required by the third-party dependencies used in the build, including components subject to the Mozilla Public License 2.0 where applicable.
 
-## Codice sorgente
+## Disclaimer
 
-Questo repository è destinato esclusivamente alla distribuzione delle build.
-
-La pubblicazione degli installer in questo repository non implica la
-pubblicazione del codice sorgente di MeteoCasarano Lab e non concede,
-di per sé, diritti sul software oltre a quelli eventualmente indicati
-separatamente.
-
-## Stato del progetto
-
-MeteoCasarano Lab è un progetto amatoriale e sperimentale.
-
-Le informazioni meteorologiche prodotte dall'applicazione non costituiscono
-un servizio ufficiale di allerta o protezione civile.
+MeteoCasarano Lab is an amateur and experimental project. Its outputs must not be used as an official warning service or as a substitute for professional meteorological forecasts, Civil Protection communications or official weather services.
