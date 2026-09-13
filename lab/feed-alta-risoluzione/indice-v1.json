@@ -1,0 +1,12 @@
+{
+  "versioneFormato": 1,
+  "generatoIl": "2026-09-13T18:19:47.642Z",
+  "modelli": [
+    {
+      "identificatoreModello": "wrf",
+      "modelloNome": "WRF",
+      "runUtc": "2026-09-13T00:00:00Z",
+      "percorsoPayload": "wrf/2026091300.json"
+    }
+  ]
+}

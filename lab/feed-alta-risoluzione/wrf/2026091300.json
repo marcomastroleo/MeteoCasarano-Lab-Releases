@@ -1,0 +1,380 @@
+{
+  "versioneFormato": 1,
+  "identificatoreModello": "wrf",
+  "modelloNome": "WRF",
+  "runUtc": "2026-09-13T00:00:00Z",
+  "riassunti": [
+    {
+      "identificatoreCella": "casarano",
+      "identificatoreModello": "wrf",
+      "modelloNome": "WRF",
+      "istante": "2026-09-13T03:00:00Z",
+      "numeroSottopunti": 16,
+      "perRischio": {
+        "temporali": {
+          "numeroValori": 16,
+          "p10": 19,
+          "p25": 19.75,
+          "mediana": 20,
+          "p75": 20.25,
+          "p90": 22.5,
+          "coerenzaP25P75": 0.9753086419753086,
+          "coperturaAlta": 1,
+          "contrastoP10P90": 0.15555555555555556,
+          "forma": "diffuso"
+        },
+        "temporaliForti": {
+          "numeroValori": 16,
+          "p10": 9,
+          "p25": 9,
+          "mediana": 9,
+          "p75": 10,
+          "p90": 11,
+          "coerenzaP25P75": 0.9,
+          "coperturaAlta": 1,
+          "contrastoP10P90": 0.18181818181818182,
+          "forma": "nessun_segnale"
+        },
+        "nubifragi": {
+          "numeroValori": 16,
+          "p10": 10,
+          "p25": 10,
+          "mediana": 10,
+          "p75": 11,
+          "p90": 11.5,
+          "coerenzaP25P75": 0.9090909090909091,
+          "coperturaAlta": 1,
+          "contrastoP10P90": 0.13043478260869565,
+          "forma": "nessun_segnale"
+        },
+        "grandine": {
+          "numeroValori": 16,
+          "p10": 10,
+          "p25": 10,
+          "mediana": 10,
+          "p75": 10,
+          "p90": 11,
+          "coerenzaP25P75": 1,
+          "coperturaAlta": 1,
+          "contrastoP10P90": 0.09090909090909091,
+          "forma": "nessun_segnale"
+        },
+        "raffiche": {
+          "numeroValori": 16,
+          "p10": 9,
+          "p25": 9,
+          "mediana": 10,
+          "p75": 10,
+          "p90": 10,
+          "coerenzaP25P75": 0.9,
+          "coperturaAlta": 1,
+          "contrastoP10P90": 0.1,
+          "forma": "nessun_segnale"
+        },
+        "organizzazione": {
+          "numeroValori": 16,
+          "p10": 7,
+          "p25": 8,
+          "mediana": 8.5,
+          "p75": 9,
+          "p90": 9.5,
+          "coerenzaP25P75": 0.8888888888888888,
+          "coperturaAlta": 0.8125,
+          "contrastoP10P90": 0.2631578947368421,
+          "forma": "nessun_segnale"
+        },
+        "ipotesiNeve": {
+          "numeroValori": 16,
+          "p10": 0,
+          "p25": 0,
+          "mediana": 0,
+          "p75": 0,
+          "p90": 0,
+          "coerenzaP25P75": 0,
+          "coperturaAlta": 1,
+          "contrastoP10P90": 0,
+          "forma": "nessun_segnale"
+        }
+      }
+    },
+    {
+      "identificatoreCella": "casarano",
+      "identificatoreModello": "wrf",
+      "modelloNome": "WRF",
+      "istante": "2026-09-13T11:00:00Z",
+      "numeroSottopunti": 16,
+      "perRischio": {
+        "temporali": {
+          "numeroValori": 16,
+          "p10": 21,
+          "p25": 21,
+          "mediana": 22,
+          "p75": 24,
+          "p90": 25,
+          "coerenzaP25P75": 0.875,
+          "coperturaAlta": 1,
+          "contrastoP10P90": 0.16,
+          "forma": "diffuso"
+        },
+        "temporaliForti": {
+          "numeroValori": 16,
+          "p10": 10.5,
+          "p25": 11,
+          "mediana": 12,
+          "p75": 13,
+          "p90": 13.5,
+          "coerenzaP25P75": 0.8461538461538461,
+          "coperturaAlta": 0.875,
+          "contrastoP10P90": 0.2222222222222222,
+          "forma": "nessun_segnale"
+        },
+        "nubifragi": {
+          "numeroValori": 16,
+          "p10": 6,
+          "p25": 6,
+          "mediana": 7,
+          "p75": 8,
+          "p90": 8.5,
+          "coerenzaP25P75": 0.75,
+          "coperturaAlta": 0.6875,
+          "contrastoP10P90": 0.29411764705882354,
+          "forma": "nessun_segnale"
+        },
+        "grandine": {
+          "numeroValori": 16,
+          "p10": 9,
+          "p25": 9,
+          "mediana": 10,
+          "p75": 10,
+          "p90": 11,
+          "coerenzaP25P75": 0.9,
+          "coperturaAlta": 0.9375,
+          "contrastoP10P90": 0.18181818181818182,
+          "forma": "nessun_segnale"
+        },
+        "raffiche": {
+          "numeroValori": 16,
+          "p10": 12,
+          "p25": 12,
+          "mediana": 13,
+          "p75": 14,
+          "p90": 14.5,
+          "coerenzaP25P75": 0.8571428571428571,
+          "coperturaAlta": 1,
+          "contrastoP10P90": 0.1724137931034483,
+          "forma": "nessun_segnale"
+        },
+        "organizzazione": {
+          "numeroValori": 16,
+          "p10": 6,
+          "p25": 7,
+          "mediana": 8,
+          "p75": 10,
+          "p90": 10.5,
+          "coerenzaP25P75": 0.7,
+          "coperturaAlta": 0.3125,
+          "contrastoP10P90": 0.42857142857142855,
+          "forma": "nessun_segnale"
+        },
+        "ipotesiNeve": {
+          "numeroValori": 16,
+          "p10": 0,
+          "p25": 0,
+          "mediana": 0,
+          "p75": 0,
+          "p90": 0,
+          "coerenzaP25P75": 0,
+          "coperturaAlta": 1,
+          "contrastoP10P90": 0,
+          "forma": "nessun_segnale"
+        }
+      }
+    },
+    {
+      "identificatoreCella": "casarano",
+      "identificatoreModello": "wrf",
+      "modelloNome": "WRF",
+      "istante": "2026-09-13T12:00:00Z",
+      "numeroSottopunti": 16,
+      "perRischio": {
+        "temporali": {
+          "numeroValori": 16,
+          "p10": 21.5,
+          "p25": 22.75,
+          "mediana": 23.5,
+          "p75": 24.25,
+          "p90": 25,
+          "coerenzaP25P75": 0.9381443298969072,
+          "coperturaAlta": 1,
+          "contrastoP10P90": 0.14,
+          "forma": "diffuso"
+        },
+        "temporaliForti": {
+          "numeroValori": 16,
+          "p10": 11,
+          "p25": 11.75,
+          "mediana": 13,
+          "p75": 14,
+          "p90": 14,
+          "coerenzaP25P75": 0.8392857142857143,
+          "coperturaAlta": 0.75,
+          "contrastoP10P90": 0.21428571428571427,
+          "forma": "nessun_segnale"
+        },
+        "nubifragi": {
+          "numeroValori": 16,
+          "p10": 6.5,
+          "p25": 7,
+          "mediana": 8,
+          "p75": 9,
+          "p90": 9,
+          "coerenzaP25P75": 0.7777777777777778,
+          "coperturaAlta": 0.6875,
+          "contrastoP10P90": 0.2777777777777778,
+          "forma": "nessun_segnale"
+        },
+        "grandine": {
+          "numeroValori": 16,
+          "p10": 9,
+          "p25": 9,
+          "mediana": 10,
+          "p75": 11,
+          "p90": 11,
+          "coerenzaP25P75": 0.8181818181818182,
+          "coperturaAlta": 0.9375,
+          "contrastoP10P90": 0.18181818181818182,
+          "forma": "nessun_segnale"
+        },
+        "raffiche": {
+          "numeroValori": 16,
+          "p10": 12,
+          "p25": 13,
+          "mediana": 14,
+          "p75": 14,
+          "p90": 15,
+          "coerenzaP25P75": 0.9285714285714286,
+          "coperturaAlta": 1,
+          "contrastoP10P90": 0.2,
+          "forma": "nessun_segnale"
+        },
+        "organizzazione": {
+          "numeroValori": 16,
+          "p10": 7,
+          "p25": 8,
+          "mediana": 10,
+          "p75": 11,
+          "p90": 11.5,
+          "coerenzaP25P75": 0.7272727272727273,
+          "coperturaAlta": 0.5625,
+          "contrastoP10P90": 0.391304347826087,
+          "forma": "nessun_segnale"
+        },
+        "ipotesiNeve": {
+          "numeroValori": 16,
+          "p10": 0,
+          "p25": 0,
+          "mediana": 0,
+          "p75": 0,
+          "p90": 0,
+          "coerenzaP25P75": 0,
+          "coperturaAlta": 1,
+          "contrastoP10P90": 0,
+          "forma": "nessun_segnale"
+        }
+      }
+    },
+    {
+      "identificatoreCella": "casarano",
+      "identificatoreModello": "wrf",
+      "modelloNome": "WRF",
+      "istante": "2026-09-13T13:00:00Z",
+      "numeroSottopunti": 16,
+      "perRischio": {
+        "temporali": {
+          "numeroValori": 16,
+          "p10": 24,
+          "p25": 24,
+          "mediana": 24,
+          "p75": 24.25,
+          "p90": 25,
+          "coerenzaP25P75": 0.9896907216494846,
+          "coperturaAlta": 1,
+          "contrastoP10P90": 0.04,
+          "forma": "diffuso"
+        },
+        "temporaliForti": {
+          "numeroValori": 16,
+          "p10": 13,
+          "p25": 13,
+          "mediana": 13,
+          "p75": 14,
+          "p90": 14,
+          "coerenzaP25P75": 0.9285714285714286,
+          "coperturaAlta": 1,
+          "contrastoP10P90": 0.07142857142857142,
+          "forma": "nessun_segnale"
+        },
+        "nubifragi": {
+          "numeroValori": 16,
+          "p10": 9,
+          "p25": 9,
+          "mediana": 9,
+          "p75": 10,
+          "p90": 10,
+          "coerenzaP25P75": 0.9,
+          "coperturaAlta": 1,
+          "contrastoP10P90": 0.1,
+          "forma": "nessun_segnale"
+        },
+        "grandine": {
+          "numeroValori": 16,
+          "p10": 10,
+          "p25": 10,
+          "mediana": 10,
+          "p75": 10,
+          "p90": 10.5,
+          "coerenzaP25P75": 1,
+          "coperturaAlta": 1,
+          "contrastoP10P90": 0.047619047619047616,
+          "forma": "nessun_segnale"
+        },
+        "raffiche": {
+          "numeroValori": 16,
+          "p10": 14,
+          "p25": 14,
+          "mediana": 14,
+          "p75": 14,
+          "p90": 14,
+          "coerenzaP25P75": 1,
+          "coperturaAlta": 1,
+          "contrastoP10P90": 0,
+          "forma": "nessun_segnale"
+        },
+        "organizzazione": {
+          "numeroValori": 16,
+          "p10": 9,
+          "p25": 10,
+          "mediana": 10,
+          "p75": 11,
+          "p90": 11,
+          "coerenzaP25P75": 0.9090909090909091,
+          "coperturaAlta": 1,
+          "contrastoP10P90": 0.18181818181818182,
+          "forma": "nessun_segnale"
+        },
+        "ipotesiNeve": {
+          "numeroValori": 16,
+          "p10": 0,
+          "p25": 0,
+          "mediana": 0,
+          "p75": 0,
+          "p90": 0,
+          "coerenzaP25P75": 0,
+          "coperturaAlta": 1,
+          "contrastoP10P90": 0,
+          "forma": "nessun_segnale"
+        }
+      }
+    }
+  ]
+}
